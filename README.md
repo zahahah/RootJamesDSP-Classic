@@ -1,4 +1,8 @@
-# RootJamesDSP
+# RootJamesDSP Classic
+
+## A note from Lightning Zahah
+
+I preserved this repository as the **JamesDSP 1.6.17 Classic app**, paired with [JamesDSPManager Classic 6.6](https://github.com/zahahah/JamesDSPManager-Classic/releases/tag/v6.6). This is the JamesDSP line before my LightningDSP rebrand. My current development continues in [LightningDSP-App](https://github.com/zahahah/LightningDSP-App), together with the [LightningDSP module](https://github.com/zahahah/LightningDSP).
 
 JamesDSP on Android, with a Root build, a Rootless build, and an optional bridge to VolumeManager. This fork keeps the upstream app and adds the integration work described below. No magic audio fairy required, just the right build and setup.
 
@@ -9,7 +13,7 @@ JamesDSP on Android, with a Root build, a Rootless build, and an optional bridge
 
 ## Root setup
 
-The Root build works with the companion module in [zahahah/JamesDSPManager](https://github.com/zahahah/JamesDSPManager). JamesDSPManager 6.6 supplies one ARM64 `libjamesdsp.so` with AIDL effect entrypoints and a legacy adapter for supported HIDL effect factories. It uses a systemless mount overlay, so it doesn't write permanent changes to the physical `/system` or `/vendor` partitions.
+The Root build works with the companion module in [zahahah/JamesDSPManager-Classic](https://github.com/zahahah/JamesDSPManager-Classic). JamesDSPManager 6.6 supplies one ARM64 `libjamesdsp.so` with AIDL effect entrypoints and a legacy adapter for supported HIDL effect factories. It uses a systemless mount overlay, so it doesn't write permanent changes to the physical `/system` or `/vendor` partitions.
 
 The Pixel configuration tested so far is a **Pixel 10 Pro XL (`mustang`) on Android 17, KernelSU Next, and Magic Mount-rs 4.0.11**. The module stayed active across several soft reboots in that setup. That's useful evidence, not a promise that every Pixel build or audio HAL will behave identically. Android audio stacks enjoy keeping a few surprises in reserve.
 
@@ -33,7 +37,7 @@ before recovery; firmware actions can also restart audioserver indirectly.
 
 For that setup:
 
-1. Download the matching module and Root APK from the [JamesDSPManager release](https://github.com/zahahah/JamesDSPManager/releases/tag/v6.6). The module includes the APK too.
+1. Download the matching module and Root APK from the [JamesDSPManager release](https://github.com/zahahah/JamesDSPManager-Classic/releases/tag/v6.6). The module includes the APK too.
 2. Install the module using your root manager. For normal-boot root, follow its reboot procedure. For temp-root/late-load, follow its activation flow; do not assume reboot preserves root.
 3. Grant JamesDSP root access, enable processing and play some music.
 
@@ -57,10 +61,10 @@ The Root build depends on the device's audio HAL and the root manager's module-m
 
 ## Downloads
 
-- [JamesDSP root app 1.6.17 / code 62](https://github.com/zahahah/RootJamesDSP/releases/tag/v1.6.17), the same signed APK bundled in the 6.6 module.
-- [Current module and matching Root APK](https://github.com/zahahah/JamesDSPManager/releases/tag/v6.6).
+- [JamesDSP root app 1.6.17 / code 62](https://github.com/zahahah/RootJamesDSP-Classic/releases/tag/v1.6.17), the same signed APK bundled in the 6.6 module.
+- [Current module and matching Root APK](https://github.com/zahahah/JamesDSPManager-Classic/releases/tag/v6.6).
 - [Historical RootJamesDSP Pixel test builds](https://github.com/zahahah/RootJamesDSP/releases/tag/pixel-test): choose **Root** when using the module, or **Rootless** if you don't want root.
-- [JamesDSPManager module](https://github.com/zahahah/JamesDSPManager)
+- [JamesDSPManager module](https://github.com/zahahah/JamesDSPManager-Classic)
 - [VolumeManager](https://github.com/zahahah/VolumeManager)
 
 This is a community fork of [ThePBone's RootlessJamesDSP](https://github.com/ThePBone/RootlessJamesDSP), which uses [JamesDSP](https://github.com/james34602). Please check the upstream project and this repository's [license](LICENSE) for the original credits and terms.
